@@ -1,9 +1,7 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env bash
 # -*- coding: utf-8 -*-
 
 [ -r "script/bootstrap.sh" ] && source "script/bootstrap.sh"
-
-cd "${ROOT_DIR}"
 
 gvm pkgset list | grep -q "${GVM_NAME}"
 response=$?
