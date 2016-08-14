@@ -4,10 +4,14 @@
 # load source files externals
 [ -r "$HOME/.gvm/scripts/gvm" ] && source "$HOME/.gvm/scripts/gvm"
 
+if [ -e "$HOME/.pyenv" ]; then
+    eval "$(pyenv init -)"
+    eval "$(pyenv virtualenv-init -)"
+fi
+
 PROJECT_NAME=stringutil
 PYTHON_VERSION=2.7.9
 PYENV_NAME="go_${PROJECT_NAME}"
-# PYENV_INSTALL="$(pyenv virtualenv "${PYTHON_VERSION}" "${PYENV_NAME}")"
 
 GVM_NAME="${PROJECT_NAME}"
 GVM_PATHS_NAME="{src, pkg, bin}"
