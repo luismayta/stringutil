@@ -3,8 +3,8 @@
 
 export PROJECT_NAME=stringutil
 export PYTHON_VERSION=2.7.9
-export PYENV_NAME="go_$PROJECT_NAME"
-export PYENV_INSTALL= pyevn virtualenv ${PYTHON_VERSION} go_${PROJECT_NAME}
+export PYENV_NAME="go_${PROJECT_NAME}"
+export PYENV_INSTALL=`pyenv virtualenv "${PYTHON_VERSION}" "${PYENV_NAME}"`
 export GVM_NAME="${PROJECT_NAME}"
 export GVM_PATHS_NAME="{src, pkg, bin}"
 
