@@ -1,16 +1,17 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 # -*- coding: utf-8 -*-
 
 [ -r "script/bootstrap.sh" ] && source "script/bootstrap.sh"
 
-cd $ROOT_DIR
+cd "${ROOT_DIR}"
 
-gvm pkgset list | grep -q $GVM_NAME
-$response=$?
+gvm pkgset list | grep -q "${GVM_NAME}"
+response=$?
 
-if [[ ! ${response} -eq '0' ]]; then
-    gvm pkgset create $GVM_NAME
+if [[ ! "${response}" -eq '0' ]]; then
+    "$(gvm pkgset create "${GVM_NAME}")"
 fi
 
-gvm pkgset use $GVM_NAME
-mkdir -p $GOPATH/${GVM_PATHS_NAME}
+gvm pkgset use "${GVM_NAME}"
+
+mkdir -p "${GOPATH}/${GVM_PATHS_NAME}"
