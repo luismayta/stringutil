@@ -2,12 +2,12 @@
 # -*- coding: utf-8 -*-
 
 # load source files externals
-[ -r "$HOME/.gvm/scripts/gvm" ] && source "$HOME/.gvm/scripts/gvm"
-
 if [ -e "$HOME/.pyenv" ]; then
     eval "$(pyenv init -)"
     eval "$(pyenv virtualenv-init -)"
 fi
+
+[ -r "$HOME/.gvm/scripts/gvm" ] && source "$HOME/.gvm/scripts/gvm"
 
 PROJECT_NAME=stringutil
 PYTHON_VERSION=2.7.9
